@@ -100,7 +100,7 @@ ai-content-generator/
 ### 🔧 Backend Setup
 
 ```
-git clone https://github.com/your-username/ai-content-generator.git
+git clone https://github.com/vaibhv19/ai-content-generator.git
 cd backend
 
 # Add your API key in application.properties
