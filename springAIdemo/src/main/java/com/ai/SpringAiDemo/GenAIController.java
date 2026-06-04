@@ -42,7 +42,7 @@ public class GenAIController {
                                        @RequestParam(defaultValue = "1024") int height) throws IOException {
         ImageResponse imageResponse = imageService.generateImage(prompt, quality, n, width, height);
 
-        // Streams to get urls from ImageResponse
+
         List<String> imageUrls = imageResponse.getResults().stream()
                 .map(result -> result.getOutput().getUrl())
                 .toList();
