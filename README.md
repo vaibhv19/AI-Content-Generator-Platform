@@ -92,7 +92,7 @@ ai-content-generator/
 ### Prerequisites
 
 * Java 17+
-* Maven / Gradle
+* Maven 
 * Node.js
 
 ---
