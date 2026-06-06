@@ -1,7 +1,5 @@
 # 🤖 AI Content Generator Platform
 
-### (Chat + Image + Recipe Generator using Spring AI & Spring Boot)
-
 A full-stack AI-powered web application that enables users to generate **text responses, stock images, and recipes** using natural language prompts. Built with Spring Boot, Spring AI, and a modern frontend.
 
 ---
