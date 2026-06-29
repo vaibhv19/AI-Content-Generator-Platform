@@ -7,7 +7,7 @@ import org.springframework.ai.openai.OpenAiChatOptions;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ChatService {{
+public class ChatService {
 
     private final ChatModel chatModel;
 
@@ -33,4 +33,4 @@ public class ChatService {{
 
         return response.getResult().getOutput().getText();
     }
-}}
+}

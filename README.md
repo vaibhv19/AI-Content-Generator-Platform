@@ -1,203 +1,158 @@
-# 🤖 AI Content Generator Platform
+# Stock Photo Generator
 
-A full-stack AI-powered web application that enables users to generate **text responses, stock images, and recipes** using natural language prompts. Built with Spring Boot, Spring AI, and a modern frontend.
+A full-stack AI web app that generates text responses, stock photo images, and recipes from natural language prompts.
 
----
-
-## 🚀 Overview
-
-This project showcases how to integrate AI into a scalable backend system using Spring AI. It combines multiple AI-powered features into a single platform:
-
-* 💬 Conversational AI (Chat)
-* 🖼️ AI Image Generation (Stock Photos)
-* 🍲 Recipe Generator using AI
+Built with:
+* React frontend
+* Spring Boot backend
+* Spring AI for OpenAI-powered chat, image generation, and recipe creation
 
 ---
 
-## ✨ Features
+## Overview
 
-* 🔍 Generate images from natural language prompts
-* 💬 Chat with AI using LLM integration
-* 🍲 Generate recipes dynamically
-* ⚡ REST API-based backend architecture
-* 🎨 Responsive frontend with dynamic rendering
-* 🔧 Configurable AI parameters (temperature, tokens, etc.)
-* 🌐 Full-stack integration (React + Spring Boot)
-* 🛠️ CORS handling for seamless communication
+This repository is organized into two main folders:
+* `frontend/` — React user interface
+* `backend/` — Spring Boot API server
+
+The app uses a React dashboard to call backend endpoints for AI chat, image generation, and recipe creation.
 
 ---
 
-## 🛠️ Tech Stack
+## Features
+
+* 💬 AI chat responses
+* 🖼️ AI-generated images from prompt text
+* 🍲 AI recipe generation from ingredients and cuisine preferences
+* 🌐 React frontend + Spring Boot backend integration
+* ⚙️ CORS-enabled local development
+
+---
+
+## Tech Stack
+
+### Backend
+* Java 21
+* Spring Boot
+* Spring AI
+* Maven
+
+### Frontend
+* React.js
+* JavaScript
+* Create React App
+* Fetch API
+
+---
+
+## Project Structure
+
+```
+frontend/
+  package.json
+  package-lock.json
+  public/
+  src/
+backend/
+  pom.xml
+  mvnw
+  mvnw.cmd
+  HELP.md
+  src/
+README.md
+```
+
+---
+
+## Prerequisites
+
+* Java 21
+* Maven (or use the bundled Maven wrapper)
+* Node.js 18+ and npm
+
+---
+
+## Setup
 
 ### Backend
 
-* Java
-* Spring Boot
-* Spring AI
-* REST APIs
+1. Open `backend/src/main/resources/application.properties`
+2. Set your OpenAI key:
+
+```properties
+spring.ai.openai-key=${OPENAI_API_KEY}
+```
+
+3. Start the backend:
+
+```powershell
+cd backend
+.\mvnw.cmd spring-boot:run
+```
 
 ### Frontend
 
-* React.js
-* HTML, CSS
-* Axios / Fetch API
-
-### AI Integration
-
-* OpenAI / Gemini APIs (via Spring AI)
-
----
-
-## 🧠 Architecture
-
-```
-Client (React)
-   ↓
-REST Controller (Spring Boot)
-   ↓
-Service Layer
-   ↓
-Spring AI Client
-   ↓
-LLM / Image Model API
-```
-
----
-
-## 📂 Project Structure
-
-```
-ai-content-generator/
-│
-├── backend/
-│   ├── controller/
-│   ├── service/
-│   ├── config/
-│   └── resources/
-│
-├── frontend/
-│   ├── components/
-│   ├── pages/
-│   └── services/
-│
-└── README.md
-```
-
----
-
-## ⚙️ Setup & Installation
-
-### Prerequisites
-
-* Java 17+
-* Maven 
-* Node.js
-
----
-
-### 🔧 Backend Setup
-
-```
-git clone https://github.com/vaibhv19/AI-Content-Generator-Platform.git
-cd backend
-
-# Add your API key in application.properties
-mvn spring-boot:run
-```
-
----
-
-### 💻 Frontend Setup
-
-```
+```powershell
 cd frontend
 npm install
 npm start
 ```
 
----
-
-## 🔑 Configuration
-
-Add your API key:
-
-```
-spring.ai.api.key=YOUR_API_KEY
-```
+The frontend runs on `http://localhost:3000` and calls the backend at `http://localhost:8080`.
 
 ---
 
-## 📡 API Endpoints
+## API Endpoints
 
-### Chat API
-
-```
-POST /api/chat
-```
-
-### Image Generation API
+### Chat
 
 ```
-POST /api/image
+GET /ask-ai?prompt=<your prompt>
 ```
 
-### Recipe Generator API
+### Image Generation
 
 ```
-POST /api/recipe
+GET /generate-image?prompt=<your prompt>
+```
+
+### Recipe Generator
+
+```
+GET /recipe-creator?ingredients=<ingredients>&cuisine=<cuisine>&dietaryRestrictions=<restrictions>
 ```
 
 ---
 
-## 📥 Sample Request
+## Build
 
-```json
-{
-  "prompt": "A futuristic city at sunset"
-}
+### Backend
+
+```powershell
+cd backend
+.\mvnw.cmd -DskipTests compile
+```
+
+### Frontend
+
+```powershell
+cd frontend
+npm run build
 ```
 
 ---
 
-## 🎯 Use Cases
+## Notes
 
-* Content creators
-* Developers exploring AI integration
-* Designers generating quick assets
-* Students learning full-stack AI apps
+* The backend is configured to allow cross-origin requests from `http://localhost:3000`.
+* If you need to use a different OpenAI environment variable name, update `application.properties` accordingly.
 
 ---
 
-## 🚀 Future Improvements
+## License
 
-* 📜 Prompt history tracking
-* 📥 Image download feature
-* 🔐 User authentication
-* 🎨 Style presets (realistic, anime, etc.)
-* ☁️ Deployment on cloud (AWS / Docker)
+MIT
 
----
-
-## 📌 Learning Outcomes
-
-* Integration of AI with Spring Boot using Spring AI
-* Designing scalable REST APIs
-* Full-stack development with React
-* Handling real-world issues like CORS and API configuration
-
----
-
-## 🤝 Contributing
-
-Pull requests are welcome. For major changes, please open an issue first.
-
----
-
-## 📜 License
-
-This project is licensed under the MIT License.
-
----
 
 ## 👨‍💻 Author
 
